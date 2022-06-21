@@ -2,7 +2,11 @@ import React from "react";
 
 function FilterButton(props) {
     return (
-      <button type="button" className="btn toggle-btn flex1" aria-pressed="true">
+      <button 
+        type="button" 
+        className="btn toggle-btn flex1" 
+        aria-pressed="true"
+      >
         <span className="visually-hidden">Show </span>
         <span>{props.name}</span>
         <span className="visually-hidden"> tasks</span>

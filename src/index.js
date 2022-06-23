@@ -5,11 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import FilterButton from './components/FilterButton';
 
-const DATA = [
+const DATA = (JSON.parse(localStorage.getItem('todos')) || [
   { id: "todo-0", name: "Eat", completed: false },
   { id: "todo-1", name: "Sleep", completed: false },
   { id: "todo-2", name: "Repeat", completed: false }
-];
+]);
 
 const FILTER_MAP = {
   All: ()=>true,

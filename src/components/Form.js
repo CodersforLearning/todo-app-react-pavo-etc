@@ -17,10 +17,10 @@ function Form(props) {
   }
 
   return (
-        <form 
-          className="todoform"
-          onSubmit={handleSubmit}
-        >
+      <form 
+        className="todoform"
+        onSubmit={handleSubmit}
+      >
         <div className="flex">
           <input 
             type="text" 

@@ -10,6 +10,7 @@ import { nanoid } from "nanoid";
 function App(props) {
   
   const [tasks, setTasks] = useState(props.tasks);
+  const [filter, setFilter] = useState("All");
 
   function addTask(name) {
     if (name==="") return;
@@ -48,10 +49,11 @@ function App(props) {
     setTasks(updatedTasks);
 
   }
+
   
   tasks.map(task=>{console.log(task.id+" "+task.completed)})
 
-  const taskList = tasks.map(task => (
+  const taskList = tasks.filter(props.FILTER_MAP[filter]).map(task => (
     <Todo 
       id={task.id} 
       name={task.name} 
@@ -59,6 +61,16 @@ function App(props) {
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
+      editTask={editTask}
+    />
+  ));
+
+  const filterList = props.FILTER_NAMES.map(name=>(
+    <FilterButton 
+      key={name} 
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}  
     />
   ));
 
@@ -69,9 +81,7 @@ function App(props) {
       <h1>Todont</h1>
       <Form addTask={addTask}/>
       <div className="filters btn-group stack-exception flex">
-        <FilterButton name="all"/>
-        <FilterButton name="active"/>
-        <FilterButton name="completed"/>
+        {filterList}
 
       </div>
 

@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import FilterButton from './components/FilterButton';
 
 const DATA = (JSON.parse(localStorage.getItem('todos')) || [
-  { id: "todo-0", name: "Eat", completed: false },
-  { id: "todo-1", name: "Sleep", completed: false },
-  { id: "todo-2", name: "Repeat", completed: false }
+  { id: "todo-0", name: "Sugondese", completed: false },
+  { id: "todo-1", name: "Ligma", completed: false },
+  { id: "todo-2", name: "Joe", completed: false }
 ]);
 
 const FILTER_MAP = {
@@ -18,7 +18,6 @@ const FILTER_MAP = {
 };
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

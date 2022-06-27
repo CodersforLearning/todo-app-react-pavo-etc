@@ -13,7 +13,7 @@ function App(props) {
   const addTask = (name) => {
     if (name === "") return;
     let newTask = {
-      id: "task-" + nanoid(),
+      id: `task-${nanoid()}`,
       name: name,
       completed: false,
     };
